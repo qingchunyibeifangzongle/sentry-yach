@@ -1,13 +1,16 @@
 #!/usr/bin/env python
+import re
 from setuptools import setup, find_packages
-from sentry_yach import VERSION
+
+with open("src/sentry_yach/__init__.py") as f:
+    version = re.search(r'VERSION = "(.*?)"', f.read()).group(1)
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
     name="sentry-yach",
-    version=VERSION,
+    version=version,
     author='yp',
     author_email='xiaoyueueyue0612@gmail.com',
     url='https://github.com/qingchunyibeifangzongle/sentry-yach',
