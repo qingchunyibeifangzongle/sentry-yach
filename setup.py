@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
+from sentry_yach import VERSION
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
     name="sentry-yach",
-    version='0.0.4',
+    version=VERSION,
     author='yp',
     author_email='xiaoyueueyue0612@gmail.com',
     url='https://github.com/qingchunyibeifangzongle/sentry-yach',
@@ -21,7 +22,6 @@ setup(
     packages=find_packages('src'),
     install_requires=[
         'sentry>=9.0.0',
-        'requests',
     ],
     entry_points={
         'sentry.plugins': [
